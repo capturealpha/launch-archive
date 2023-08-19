@@ -1,2 +1,5 @@
+#!/bin/sh 
+
 cd api
-npm test
+npm run lint:fix && npm test
+exit $?

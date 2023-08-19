@@ -14,7 +14,7 @@ const { PORT = 3080 } = process.env
 // app.use('/deployment', DeploymentRouter(null))
 console.log(process.env.API_VERSION, process.env.RPC_ENDPOINT)
 
-async function initApp () {
+async function initApp (): Promise<any> {
   try {
     return app.listen(PORT, () => {
       console.log(`server started at http://localhost: ${PORT}`)
