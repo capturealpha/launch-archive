@@ -15,6 +15,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "target": "esnext",
+    "strict": true,
     "baseUrl": "./src",
     "paths": {
       "@src/*": [

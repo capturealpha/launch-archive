@@ -1,5 +1,5 @@
-import { Deployment } from "../../entities/deployment"; 
+import { type Deployment } from '../../entities/deployment'
 
-export interface DeploymentRepository { 
-    getDeployment(): Promise<Deployment[]>; 
+export interface DeploymentRepository {
+  getDeployment: () => Promise<Deployment[]>
 }

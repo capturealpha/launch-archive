@@ -1,5 +1,5 @@
-import { Deployment } from "../../../entities/deployment"; 
+import { type Deployment } from '../../../entities/deployment'
 
-export interface GetDeploymentUseCase { 
-    execute(address: string): Promise<Deployment[]>; 
+export interface GetDeploymentUseCase {
+  execute: (address: string) => Promise<Deployment[]>
 }
