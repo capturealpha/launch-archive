@@ -4,7 +4,7 @@ class DeploymentService {
   constructor(
     public apiVersion: string,
     public rpcEndpoint: string,
-    public QueryModule: any
+    public QueryModule: any,
   ) { 
     apiVersion = apiVersion;
     rpcEndpoint = rpcEndpoint;
@@ -21,7 +21,14 @@ class DeploymentService {
     const rpc = await getRpc(this.rpcEndpoint)
     const client = new this.QueryModule.QueryClientImpl(rpc);
     const response = await client.Deployments(request);
-
+    if(response.deployments && response.deployments.length) {
+      response.deployments.map((deploymentWrapper: any) => {
+        const deployment = deploymentWrapper.deployment;
+        console.log(deployment, typeof(deployment));
+      });
+      //console.log(response.deployments, response.deployments.length, typeof(response.deployments));
+    }
+    //console.log(response, typeof(response));
     return this.QueryModule.QueryDeploymentsResponse.toJSON(response);
   }
 }
