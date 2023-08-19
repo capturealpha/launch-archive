@@ -1,6 +1,4 @@
 cd api
-NPM=`which npm`
-echo $NPM
-RES=`$NPM run lint:fix && npm test`
-echo $RES
-exit $RES
+[ -n "$CI" ] && exit 0
+npm run lint:fix && npm test
+exit $?
