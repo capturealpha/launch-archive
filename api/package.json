@@ -16,6 +16,7 @@
     "lint": "eslint --cache \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --cache \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "depcheck": "depcheck --ignores=typescript,ts-jest,ts-loader,webpack,webpack-cli,webpack-node-externals,alias-hq,eslint,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,eslint-plugin-jest,eslint-plugin-react,eslint-plugin-react-hooks,eslint-plugin-jsx-a11y,eslint-plugin-prettier,eslint-config-prettier,prettier,prettier-eslint,prettier-eslint-cli,prettier-eslint-parser,prettier-tslint,tslint,tslint-config-prettier,tslint-plugin-prettier,tslint-react,tslint-react-hooks,tslint-eslint-rules,tslint-config-airbnb,tslint-config-airbnb-base,tslint-config-standard,tslint-plugin-import,tslint-plugin-jsdoc,tslint-plugin-prettier,tslint-plugin-react,tslint-plugin-react-hooks,tslint-plugin-sonarts,tslint-sonarts",
+    "prepare": "cd ../ && husky install api/.husky",
     "prettier": "prettier",
     "prettier:check": "prettier --list-different \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
