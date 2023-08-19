@@ -12,7 +12,7 @@ app.use(
 
 const { PORT = 3080 } = process.env
 // app.use('/deployment', DeploymentRouter(null))
-console.log(process.env.API_VERSION, process.env.RPC_ENDPOINT)
+// console.log(process.env.API_VERSION, process.env.RPC_ENDPOINT)
 
 async function initApp (): Promise<any> {
   try {
