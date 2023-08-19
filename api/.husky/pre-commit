@@ -1,4 +1,2 @@
 cd api
-[ -n "$CI" ] && exit 0
-npm run lint:fix && npm test
-exit $?
+npx lint-staged
