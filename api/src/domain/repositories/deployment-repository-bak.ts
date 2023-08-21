@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { getRpc } from '@akashnetwork/akashjs/build/rpc';
+import { getRpc } from "@akashnetwork/akashjs/build/rpc";
 
 class DeploymentService {
   constructor(

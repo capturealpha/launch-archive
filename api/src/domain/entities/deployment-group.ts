@@ -1,7 +1,7 @@
-import { type DeploymentOwner } from './deployment-owner'
+import { type DeploymentOwner } from "./deployment-owner";
 
 export interface DeploymentGroup {
-  groupId: DeploymentOwner
-  state: string
-  createdAt: string
+  groupId: DeploymentOwner;
+  state: string;
+  createdAt: string;
 }
