@@ -9,7 +9,7 @@ export class AkashApiDeploymentDataSource implements DeploymentDataSource {
   }
 
   async getAll(): Promise<DeploymentResponseModel[]> {
-    const result = await this.datasource.find({});
+    const result = await this.datasource.listDeployments();
     return result.map((item) => ({
       state: item.state
     }));

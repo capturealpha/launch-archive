@@ -1,6 +1,6 @@
 import request from "supertest";
 import { type Deployment } from "../../src/domain/entities/deployment";
-import { type GetDeploymentUseCase } from "../../src/domain/interfaces/use-cases/deployment/get-deployment";
+import { type GetDeploymentUseCase } from "../../src/domain/interfaces/use-cases/deployment/get-deployments";
 import DeploymentRouter from "../../src/routers/deployment-router";
 import server from "../../src/server";
 

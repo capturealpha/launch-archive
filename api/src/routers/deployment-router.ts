@@ -1,7 +1,7 @@
 import express from "express";
 import asyncHandler from "express-async-handler";
 // import DeploymentService from "../domain/repositories/deployment-repository";
-import { type GetDeploymentUseCase } from "../domain/interfaces/use-cases/deployment/get-deployment";
+import { type GetDeploymentUseCase } from "../domain/interfaces/use-cases/deployment/get-deployments";
 
 export const apiRouter = express.Router();
 
