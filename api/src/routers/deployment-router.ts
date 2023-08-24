@@ -1,12 +1,12 @@
 import express from "express";
 import asyncHandler from "express-async-handler";
 // import DeploymentService from "../domain/repositories/deployment-repository";
-import { type GetDeploymentUseCase } from "../domain/interfaces/use-cases/deployment/get-deployments";
+import { type GetDeploymentsUseCase } from "../domain/interfaces/use-cases/deployment/get-deployments";
 
 export const apiRouter = express.Router();
 
 export default function DeploymentRouter(
-  getDeploymentUseCase: GetDeploymentUseCase
+  getDeploymentUseCase: GetDeploymentsUseCase
 ): express.Router {
   // const AkashQuery = await import(`@akashnetwork/akashjs/build/protobuf/akash/deployment/${process.env.API_VERSION}/query`)
   // .then((module) => module);

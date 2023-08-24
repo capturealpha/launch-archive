@@ -1,17 +1,17 @@
 import request from "supertest";
 import { type Deployment } from "../../src/domain/entities/deployment";
-import { type GetDeploymentUseCase } from "../../src/domain/interfaces/use-cases/deployment/get-deployments";
+import { type GetDeploymentsUseCase } from "../../src/domain/interfaces/use-cases/deployment/get-deployments";
 import DeploymentRouter from "../../src/routers/deployment-router";
 import server from "../../src/server";
 
-class MockGetDeploymentUseCase implements GetDeploymentUseCase {
+class MockGetDeploymentUseCase implements GetDeploymentsUseCase {
   async execute(): Promise<Deployment[]> {
     throw new Error("Method not implemented.");
   }
 }
 
 describe("Deployment Router", () => {
-  let mockGetDeploymentUseCase: GetDeploymentUseCase;
+  let mockGetDeploymentUseCase: GetDeploymentsUseCase;
 
   beforeAll(() => {
     mockGetDeploymentUseCase = new MockGetDeploymentUseCase();
