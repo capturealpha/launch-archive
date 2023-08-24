@@ -27,7 +27,7 @@ export default function DeploymentRouter(
     "/",
     asyncHandler(async (req, res) => {
       const address = req.params.address ?? "";
-      const deployments = await getDeploymentUseCase.execute(address);
+      const deployments = await getDeploymentUseCase.execute();
       // const deployments = await deploymentService.listByOwner(address);
       res.send(deployments);
     })

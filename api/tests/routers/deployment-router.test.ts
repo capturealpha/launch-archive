@@ -24,7 +24,7 @@ describe("Deployment Router", () => {
 
   describe("GET /deployment", () => {
     test("should return 200 with data", async () => {
-      const ExpectedData = [{ state: "1" }];
+      const ExpectedData = [{ state: 1 }];
       jest
         .spyOn(mockGetDeploymentUseCase, "execute")
         .mockImplementation(async () => await Promise.resolve(ExpectedData));

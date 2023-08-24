@@ -4,7 +4,7 @@
 
 export interface Deployment {
   // deploymentId: DeploymentOwner;
-  state: string;
+  state: number;
   // version: string;
   // createdAt: string;
   // groups: DeploymentGroup[];

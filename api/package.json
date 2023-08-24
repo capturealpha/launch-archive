@@ -15,11 +15,11 @@
     "test:coverage": "jest --coverage",
     "lint": "eslint --cache \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --cache \"src/**/*.{js,jsx,ts,tsx}\" --fix",
-    "depcheck": "depcheck --ignores=typescript,ts-jest,ts-loader,webpack,webpack-cli,webpack-node-externals,alias-hq,eslint,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,eslint-plugin-jest,eslint-plugin-react,eslint-plugin-react-hooks,eslint-plugin-jsx-a11y,eslint-plugin-prettier,eslint-config-prettier,prettier,prettier-eslint,prettier-eslint-cli,prettier-eslint-parser,prettier-tslint,tslint,tslint-config-prettier,tslint-plugin-prettier,tslint-react,tslint-react-hooks,tslint-eslint-rules,tslint-config-airbnb,tslint-config-airbnb-base,tslint-config-standard,tslint-plugin-import,tslint-plugin-jsdoc,tslint-plugin-prettier,tslint-plugin-react,tslint-plugin-react-hooks,tslint-plugin-sonarts,tslint-sonarts",
+    "depcheck": "depcheck --ignores=typescript,ts-jest,ts-loader,webpack,webpack-cli,webpack-node-externals,alias-hq,eslint,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,eslint-plugin-jest",
     "prepare": "cd ../ && husky install api/.husky",
     "prettier:check": "prettier --list-different \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "update-deps": "npx npm-check-updates -u -a --prune"
+    "update-deps": "npx npm-check-updates -u"
   },
   "husky": {
     "hooks": {
@@ -36,21 +36,21 @@
   "dependencies": {
     "@akashnetwork/akashjs": "0.4.9",
     "cors": "^2.8.5",
-    "eslint-config-standard-with-typescript": "^37.0.0",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.0",
+    "lint-staged": "^14.0.1",
     "ts-loader": "^9.4.4"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
-    "@types/jest": "^29.5.3",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
+    "@types/jest": "^29.5.4",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint-config-standard-with-typescript": "^37.0.0",
     "alias-hq": "^6.2.2",
-    "depcheck": "^1.4.3",
+    "depcheck": "^1.4.5",
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",

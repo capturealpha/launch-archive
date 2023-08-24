@@ -14,7 +14,7 @@ export class DeploymentRepositoryImpl implements DeploymentRepository {
     const res: Deployment[] = [];
     deployments.forEach((deployment) => {
       res.push({
-        state: deployment.deployment?.state?.toString() || ""
+        state: deployment.deployment?.state || 0
       });
     });
     return res;
