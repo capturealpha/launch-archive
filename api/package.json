@@ -1,5 +1,5 @@
 {
-  "name": "notebookboost-api",
+  "name": "launch-api",
   "version": "0.0.1",
   "description": "API for creating and deploying jupyter notebooks on akash",
   "author": "capturealpha",

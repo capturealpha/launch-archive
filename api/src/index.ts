@@ -5,7 +5,7 @@ import cors from "cors";
 const app = express();
 app.use(
   cors({
-    origin: process.env.NOTEBOOKBOOST_CORS_WEBSITE_URLS?.split(",") != null || [
+    origin: process.env.LAUNCH_CORS_WEBSITE_URLS?.split(",") != null || [
       "http://localhost:3000",
       "http://localhost:3001"
     ],
