@@ -1,0 +1,920 @@
+{
+  "deployments": [
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "63906"
+        },
+        "state": "closed",
+        "version": "lON/11BAtAjfrJgfDeO1AAz9TEFeZct5as8UQO0rTlA=",
+        "createdAt": "63907"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "63906",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "westcoast",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "NTM2ODcwOTEy" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/a4000", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "99999.9999999999854" }
+              }
+            ]
+          },
+          "createdAt": "63907"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/63906"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "settledAt": "92179",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "92437"
+        },
+        "state": "closed",
+        "version": "tVjzpWmngxXDIzaE8VJenpK4R7gVOdEHtxzvxEuMDKI=",
+        "createdAt": "92440"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "92437",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "199999.999999999971" }
+              }
+            ]
+          },
+          "createdAt": "92440"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/92437"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "settledAt": "92676",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "92686"
+        },
+        "state": "closed",
+        "version": "skjoWNU8OaZE4Muyos9pMJdM5/LrSybs4y9lPl6EpPw=",
+        "createdAt": "92688"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "92686",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "NTI0Mjg4MDAw" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "199999.999999999971" }
+              }
+            ]
+          },
+          "createdAt": "92688"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/92686"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00400000000000000008" },
+        "transferred": { "denom": "uakt", "amount": "3488871.99599999981" },
+        "settledAt": "297787",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "93110"
+        },
+        "state": "closed",
+        "version": "cy2PomTdzO37jvHV9oRYhPvqLHi5T7SnZYtcB2dQr8A=",
+        "createdAt": "93112"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "93110",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MTA3Mzc0MTgyNDA=" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "199999.999999999971" }
+              }
+            ]
+          },
+          "createdAt": "93112"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/93110"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "settledAt": "297785",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "93328"
+        },
+        "state": "closed",
+        "version": "BlIkqkQAw28tw6/ivWSueKT/TFEorQ7ZcsGcpWrMOVk=",
+        "createdAt": "93330"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "93328",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "NTI0Mjg4MDAw" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "199999.999999999971" }
+              }
+            ]
+          },
+          "createdAt": "93330"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/93328"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "settledAt": "297783",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "296606"
+        },
+        "state": "closed",
+        "version": "K5DVYy+hkiKqGGEyfmDtvlemH5m1X9C/NqeaVAID+/4=",
+        "createdAt": "296608"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "296606",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MjQwMDA=" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MzAwNjQ3NzEwNzI=" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNDAw" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/4090", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "10000.0000000000000" }
+              }
+            ]
+          },
+          "createdAt": "296608"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/296606"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "settledAt": "297780",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "297790"
+        },
+        "state": "closed",
+        "version": "v7/nzcbRTxN61IHQ6TiSXrkLF9Vc0i5AK4H+QVxwW3k=",
+        "createdAt": "297792"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "297790",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTYwMDA=" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MzQzNTk3MzgzNjg=" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MzQzNTk3MzgzNjg=" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "10000.0000000000000" }
+              }
+            ]
+          },
+          "createdAt": "297792"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/297790"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "settledAt": "297836",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "297841"
+        },
+        "state": "closed",
+        "version": "5J1EG5krP8w8qrHUrqc3rAHrmtNqSLUfi+WR7z5Chwk=",
+        "createdAt": "297843"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "297841",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MzM1NTQ0MzI=" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MzM1NTQ0MzI=" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "10000.0000000000000" }
+              }
+            ]
+          },
+          "createdAt": "297843"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/297841"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.943999999999999950" },
+        "transferred": { "denom": "uakt", "amount": "5401.05599999999959" },
+        "settledAt": "730716",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "297892"
+        },
+        "state": "closed",
+        "version": "dfBa44PWg403HTvDUzx3D2BPeWvIeV2KYbGDEX+8kWA=",
+        "createdAt": "297894"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "297892",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "10000.0000000000000" }
+              }
+            ]
+          },
+          "createdAt": "297894"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/297892"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.959999999999999964" },
+        "transferred": { "denom": "uakt", "amount": "9301.04000000000087" },
+        "settledAt": "730714",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "297925"
+        },
+        "state": "closed",
+        "version": "dfBa44PWg403HTvDUzx3D2BPeWvIeV2KYbGDEX+8kWA=",
+        "createdAt": "297927"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "297925",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "10000.0000000000000" }
+              }
+            ]
+          },
+          "createdAt": "297927"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/297925"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "settledAt": "297999",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "297976"
+        },
+        "state": "closed",
+        "version": "dfBa44PWg403HTvDUzx3D2BPeWvIeV2KYbGDEX+8kWA=",
+        "createdAt": "297978"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "297976",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNA==" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/*", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "10000.0000000000000" }
+              }
+            ]
+          },
+          "createdAt": "297978"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/297976"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "225545.000000000000" },
+        "settledAt": "730712",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "383449"
+        },
+        "state": "closed",
+        "version": "GaYahX7L5QUO4edysYhZqhaCQNWUj7arInbTQYFXK3o=",
+        "createdAt": "383453"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "383449",
+            "gseq": 1
+          },
+          "state": "insufficient_funds",
+          "groupSpec": {
+            "name": "westcoast",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "MTAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MjE0NzQ4MzY0ODA=" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MTA3Mzc0MTgyNDAw" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": {
+                    "units": { "val": "MQ==" },
+                    "attributes": [
+                      { "key": "vendor/nvidia/model/1080", "value": "true" },
+                      { "key": "vendor/nvidia/model/1080Ti", "value": "true" },
+                      { "key": "vendor/nvidia/model/2070", "value": "true" },
+                      { "key": "vendor/nvidia/model/3060", "value": "true" },
+                      { "key": "vendor/nvidia/model/3090", "value": "true" },
+                      { "key": "vendor/nvidia/model/3090Ti", "value": "true" },
+                      { "key": "vendor/nvidia/model/4000", "value": "true" },
+                      { "key": "vendor/nvidia/model/4080", "value": "true" },
+                      { "key": "vendor/nvidia/model/4090", "value": "true" },
+                      { "key": "vendor/nvidia/model/a10", "value": "true" },
+                      { "key": "vendor/nvidia/model/a100", "value": "true" },
+                      { "key": "vendor/nvidia/model/a40", "value": "true" },
+                      { "key": "vendor/nvidia/model/a4000", "value": "true" },
+                      { "key": "vendor/nvidia/model/h100", "value": "true" },
+                      { "key": "vendor/nvidia/model/p100", "value": "true" },
+                      { "key": "vendor/nvidia/model/v100", "value": "true" }
+                    ]
+                  },
+                  "endpoints": [{ "kind": "SHARED_HTTP", "sequenceNumber": 0 }]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "99999.9999999999854" }
+              }
+            ]
+          },
+          "createdAt": "383453"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/383449"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "overdrawn",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "5000000.00000000000" },
+        "settledAt": "393894",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    },
+    {
+      "deployment": {
+        "deploymentId": {
+          "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+          "dseq": "730727"
+        },
+        "state": "closed",
+        "version": "pv1K303exOZCUUtH0M9r9nJ6T191oEGIUdSgcYJ03iQ=",
+        "createdAt": "730729"
+      },
+      "groups": [
+        {
+          "groupId": {
+            "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+            "dseq": "730727",
+            "gseq": 1
+          },
+          "state": "closed",
+          "groupSpec": {
+            "name": "akash",
+            "requirements": {
+              "signedBy": { "allOf": [], "anyOf": [] },
+              "attributes": []
+            },
+            "resources": [
+              {
+                "resources": {
+                  "cpu": { "units": { "val": "NDAwMA==" }, "attributes": [] },
+                  "memory": {
+                    "quantity": { "val": "MTYwMDAwMDAwMDA=" },
+                    "attributes": []
+                  },
+                  "storage": [
+                    {
+                      "name": "default",
+                      "quantity": { "val": "MjY4NDM1NDU2MDAwMA==" },
+                      "attributes": []
+                    },
+                    {
+                      "name": "data",
+                      "quantity": { "val": "MTA3Mzc0MTgyNDA=" },
+                      "attributes": []
+                    }
+                  ],
+                  "gpu": { "units": { "val": "MA==" }, "attributes": [] },
+                  "endpoints": [
+                    { "kind": "RANDOM_PORT", "sequenceNumber": 0 },
+                    { "kind": "RANDOM_PORT", "sequenceNumber": 0 }
+                  ]
+                },
+                "count": 1,
+                "price": { "denom": "uakt", "amount": "1000.00000000000000" }
+              }
+            ]
+          },
+          "createdAt": "730729"
+        }
+      ],
+      "escrowAccount": {
+        "id": {
+          "scope": "deployment",
+          "xid": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h/730727"
+        },
+        "owner": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "state": "closed",
+        "balance": { "denom": "uakt", "amount": "0.00000000000000000" },
+        "transferred": { "denom": "uakt", "amount": "747300.000000000000" },
+        "settledAt": "733555",
+        "depositor": "akash1paac70etxcyglu8y73kqsg6ahsty9vkt5fmr6h",
+        "funds": { "denom": "uakt", "amount": "0.00000000000000000" }
+      }
+    }
+  ],
+  "pagination": { "nextKey": "", "total": "13" }
+}
