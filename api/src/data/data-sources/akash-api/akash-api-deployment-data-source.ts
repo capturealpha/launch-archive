@@ -4,8 +4,8 @@ import { getRpc } from "@akashnetwork/akashjs/build/rpc";
 
 export class AkashApiDeploymentDataSource implements DeploymentDataSource {
   private readonly rpcEndpoint: string;
-  constructor(rpcEndpoint: string) {
-    this.rpcEndpoint = rpcEndpoint;
+  constructor(rpcEndpoint: string | undefined) {
+    this.rpcEndpoint = rpcEndpoint || "";
   }
 
   async getAll(): Promise<AkashQuery.QueryDeploymentResponse[]> {
