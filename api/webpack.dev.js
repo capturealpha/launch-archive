@@ -31,7 +31,7 @@ module.exports = {
   },
   plugins: [
     new NodemonPlugin(),
-    new Dotenv({ path: `${process.env.PWD}/testnet.env` })
+    new Dotenv({ path: `${process.env.PWD}/sandbox.env` })
   ],
   devtool: "source-map"
 };

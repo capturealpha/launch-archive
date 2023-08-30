@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch API - testnet",
+      "name": "Debug API - sandbox",
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceRoot}",
@@ -11,12 +11,22 @@
         "${workspaceRoot}/api/dist/server.js"
       ],
       "preLaunchTask": "npm: build:dev - api",
-      "env": {
-        "CHAIN_ENV": "testnet",
-        "CWD": "${workspaceRoot}",
-      },
-      //"envFile": "${workspaceRoot}/api/testnet.env",
       "sourceMaps": true
-    }
+    },
+    {
+      "name": "Debug API Tests - sandbox",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}/api",
+      "program": "${workspaceRoot}/api/node_modules/jest/bin/jest.js",
+      "args": [
+          "-i"
+      ],
+      "outFiles": [
+          "${workspaceRoot}/api/dist/**/*"
+      ],
+      "preLaunchTask": "npm: build:dev - api",
+      "internalConsoleOptions": "openOnSessionStart"
+  }
   ]
 }
