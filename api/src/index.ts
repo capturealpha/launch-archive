@@ -13,21 +13,21 @@ app.use(
   })
 );
 
-const { PORT = 3080 } = process.env;
+// const { PORT = 3080 } = process.env;
 // app.use('/deployment', DeploymentRouter(null))
 // console.log(process.env.API_VERSION, process.env.RPC_ENDPOINT)
 
-async function initApp(): Promise<unknown> {
-  try {
-    return app.listen(PORT, () => {
-      console.log(`server started at http://localhost: ${PORT}`);
-    });
-  } catch (err) {
-    console.error("Error while initializing app", err);
-    return await Promise.reject(err);
-  }
-}
+// async function initApp(): Promise<unknown> {
+//   try {
+//     return app.listen(PORT, () => {
+//       console.log(`server started at http://localhost: ${PORT}`);
+//     });
+//   } catch (err) {
+//     console.error("Error while initializing app", err);
+//     return await Promise.reject(err);
+//   }
+// }
 
-await initApp();
+// await initApp();
 
 export default app;
