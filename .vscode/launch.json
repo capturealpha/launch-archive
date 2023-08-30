@@ -6,10 +6,11 @@
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceRoot}",
-      "program": "${workspaceRoot}/api/src/index.ts",
+      "program": "${workspaceRoot}/api/src/main.ts",
       "outFiles": [
         "${workspaceRoot}/api/dist/server.js"
       ],
+      "preLaunchTask": "npm: build:dev - api",
       "env": {
         "CHAIN_ENV": "testnet",
         "CWD": "${workspaceRoot}",

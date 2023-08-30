@@ -1,5 +1,9 @@
 import { type DeploymentDataSource } from "../../interfaces/data-sources/deployment-data-source";
-import AkashQuery from "@akashnetwork/akashjs/build/protobuf/akash/deployment/v1beta3/query";
+import {
+  QueryClientImpl,
+  QueryDeploymentsRequest,
+  QueryDeploymentResponse
+} from "@akashnetwork/akashjs/build/protobuf/akash/deployment/v1beta3/query";
 import { getRpc } from "@akashnetwork/akashjs/build/rpc";
 
 export class AkashApiDeploymentDataSource implements DeploymentDataSource {
@@ -8,10 +12,10 @@ export class AkashApiDeploymentDataSource implements DeploymentDataSource {
     this.rpcEndpoint = rpcEndpoint || "";
   }
 
-  async getAll(): Promise<AkashQuery.QueryDeploymentResponse[]> {
+  async getAll(): Promise<QueryDeploymentResponse[]> {
     const rpc = await getRpc(this.rpcEndpoint);
-    const request = AkashQuery.QueryDeploymentsRequest.fromJSON({});
-    const client = new AkashQuery.QueryClientImpl(rpc);
+    const request = QueryDeploymentsRequest.fromJSON({});
+    const client = new QueryClientImpl(rpc);
     const response = await client.Deployments(request);
     if (response?.deployments?.length > 0) {
       return response.deployments;

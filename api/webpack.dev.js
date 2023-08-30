@@ -1,34 +1,37 @@
-import { resolve as _resolve } from "path";
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path");
 const { NODE_ENV = "development" } = process.env;
-import NodemonPlugin from "nodemon-webpack-plugin";
-import nodeExternals from "webpack-node-externals";
-import Dotenv from "dotenv-webpack";
-import { get } from "alias-hq";
+const NodemonPlugin = require("nodemon-webpack-plugin");
+const nodeExternals = require("webpack-node-externals");
+const Dotenv = require("dotenv-webpack");
+const hq = require("alias-hq");
 
-export const entry = "./src/main.ts";
-export const mode = NODE_ENV;
-export const target = "node";
-export const output = {
-  path: _resolve(__dirname, "dist"),
-  filename: "server.js",
-  devtoolModuleFilenameTemplate: "[absolute-resource-path]"
+module.exports = {
+  entry: "./src/main.ts",
+  mode: NODE_ENV,
+  target: "node",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "server.js",
+    devtoolModuleFilenameTemplate: "[absolute-resource-path]"
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
+    alias: hq.get("webpack")
+  },
+  externals: [nodeExternals()],
+  module: {
+    rules: [
+      {
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        loader: "ts-loader"
+      }
+    ]
+  },
+  plugins: [
+    new NodemonPlugin(),
+    new Dotenv({ path: `${process.env.PWD}/testnet.env` })
+  ],
+  devtool: "source-map"
 };
-export const resolve = {
-  extensions: [".ts", ".js"],
-  alias: get("webpack")
-};
-export const externals = [nodeExternals()];
-export const module = {
-  rules: [
-    {
-      test: /\.(ts|js)x?$/,
-      exclude: /node_modules/,
-      loader: "ts-loader"
-    }
-  ]
-};
-export const plugins = [
-  new NodemonPlugin(),
-  new Dotenv({ path: `${process.env.PWD}/testnet.env` })
-];
-export const devtool = "source-map";

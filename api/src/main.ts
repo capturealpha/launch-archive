@@ -12,5 +12,7 @@ import { AkashApiDeploymentDataSource } from "./data/data-sources/akash-api/akas
   );
 
   server.use("/deployment", deploymentMiddleWare);
-  server.listen(4000, () => console.log("Running on http://localhost:4000"));
+  server.listen(process.env.PORT || 4000, () =>
+    console.log(`Running on http://localhost:${process.env.PORT || 4000}`)
+  );
 })();
