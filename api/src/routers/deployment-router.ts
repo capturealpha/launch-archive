@@ -1,34 +1,30 @@
 import express from "express";
 import asyncHandler from "express-async-handler";
-// import DeploymentService from "../domain/repositories/deployment-repository";
-import { type GetDeploymentsUseCase } from "../domain/interfaces/use-cases/deployment/get-deployments";
+import { type GetDeploymentsUseCase } from "@src/domain/interfaces/use-cases/deployment/get-deployments";
+import { type GetDeploymentsByOwnerUseCase } from "@src/domain/interfaces/use-cases/deployment/get-deployments-by-owner";
 
 export const apiRouter = express.Router();
 
 export default function DeploymentRouter(
-  getDeploymentUseCase: GetDeploymentsUseCase
+  getDeploymentsUseCase: GetDeploymentsUseCase,
+  getDeploymentsByOwnerUseCase: GetDeploymentsByOwnerUseCase
 ): express.Router {
-  // const AkashQuery = await import(`@akashnetwork/akashjs/build/protobuf/akash/deployment/${process.env.API_VERSION}/query`)
-  // .then((module) => module);
-  // const deploymentService = new DeploymentService(process.env.API_VERSION, process.env.RPC_ENDPOINT, AkashQuery);
   const router = express.Router();
-
-  // router.get(
-  //   "/byAddress/:address",
-  //   asyncHandler(async (req, res) => {
-  //     const address = req.params.address;
-  //     const deployments = await getDeploymentUseCase.execute(address);
-  //     //const deployments = await deploymentService.listByOwner(address);
-  //     res.send(deployments);
-  //   })
-  // );
 
   router.get(
     "/",
     asyncHandler(async (req, res) => {
-      const address = req.params.address ?? "";
-      const deployments = await getDeploymentUseCase.execute();
-      // const deployments = await deploymentService.listByOwner(address);
+      const deployments = await getDeploymentsUseCase.execute();
+      res.send(deployments);
+    })
+  );
+
+  router.get(
+    "/byOwner/:address",
+    asyncHandler(async (req, res) => {
+      const deployments = await getDeploymentsByOwnerUseCase.execute(
+        req.params?.address
+      );
       res.send(deployments);
     })
   );

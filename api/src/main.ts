@@ -1,14 +1,17 @@
 import server from "./server";
 import DeploymentRouter from "./routers/deployment-router";
 import { GetDeployments } from "./domain/use-cases/deployment/get-deployments";
+import { GetDeploymentsByOwner } from "./domain/use-cases/deployment/get-deployments-by-owner";
 import { DeploymentRepositoryImpl } from "./domain/repositories/deployment-repository";
 import { AkashApiDeploymentDataSource } from "./data/data-sources/akash-api/akash-api-deployment-data-source";
 
 (async () => {
   const dataSource = new AkashApiDeploymentDataSource(process.env.RPC_ENDPOINT);
+  const repo = new DeploymentRepositoryImpl(dataSource);
 
   const deploymentMiddleWare = DeploymentRouter(
-    new GetDeployments(new DeploymentRepositoryImpl(dataSource))
+    new GetDeployments(repo),
+    new GetDeploymentsByOwner(repo)
   );
 
   server.use("/deployment", deploymentMiddleWare);

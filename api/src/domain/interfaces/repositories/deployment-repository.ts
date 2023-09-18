@@ -1,5 +1,6 @@
-import { type Deployment } from "../../entities/deployment";
+import { type Deployment } from "@src/domain/entities/deployment";
 
 export interface DeploymentRepository {
   getDeployments: () => Promise<Deployment[]>;
+  getDeploymentsByOwner: (ownerAddress: string) => Promise<Deployment[]>;
 }

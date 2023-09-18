@@ -1,15 +1,16 @@
 import { Deployment } from "@src/domain/entities/deployment";
 import { DeploymentRepository } from "@src/domain/interfaces/repositories/deployment-repository";
-import { GetDeploymentsUseCase } from "@src/domain/interfaces/use-cases/deployment/get-deployments";
+import { GetDeploymentsByOwnerUseCase } from "@src/domain/interfaces/use-cases/deployment/get-deployments-by-owner";
 
-export class GetDeployments implements GetDeploymentsUseCase {
+export class GetDeploymentsByOwner implements GetDeploymentsByOwnerUseCase {
   deploymentRepository: DeploymentRepository;
   constructor(deploymentRepository: DeploymentRepository) {
     this.deploymentRepository = deploymentRepository;
   }
 
-  async execute(): Promise<Deployment[]> {
-    const result = await this.deploymentRepository.getDeployments();
+  async execute(ownerAddress: string): Promise<Deployment[]> {
+    const result =
+      await this.deploymentRepository.getDeploymentsByOwner(ownerAddress);
     return result;
   }
 }
