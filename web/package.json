@@ -1,14 +1,16 @@
 {
-  "name": "Criptic",
-  "version": "1.5.0",
-  "private": true,
+  "name": "launch-api",
+  "version": "0.0.1",
+  "description": "UI for creating and deploying jupyter notebooks on akash",
+  "author": "capturealpha",
+  "license": "TBD",
   "scripts": {
     "clean": "rimraf \"{node_modules,.next,out.cache}\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "cd ../ && husky install web/.husky"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.2",
