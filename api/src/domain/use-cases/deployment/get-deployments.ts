@@ -1,6 +1,6 @@
-import { Deployment } from "../../entities/deployment";
-import { DeploymentRepository } from "../../interfaces/repositories/deployment-repository";
-import { GetDeploymentsUseCase } from "../../interfaces/use-cases/deployment/get-deployments";
+import { Deployment } from "@src/domain/entities/deployment";
+import { DeploymentRepository } from "@src/domain/interfaces/repositories/deployment-repository";
+import { GetDeploymentsUseCase } from "@src/domain/interfaces/use-cases/deployment/get-deployments";
 
 export class GetDeployments implements GetDeploymentsUseCase {
   deploymentRepository: DeploymentRepository;

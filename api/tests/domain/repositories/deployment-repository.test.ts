@@ -4,10 +4,17 @@ import AkashDeployment from "@akashnetwork/akashjs/build/protobuf/akash/deployme
 import { DeploymentRepository } from "../../../src/domain/interfaces/repositories/deployment-repository";
 import { DeploymentRepositoryImpl } from "../../../src/domain/repositories/deployment-repository";
 import Long from "long";
+import { Deployment } from "@src/domain/entities/deployment";
+import { base64FromBytes } from "../../../../shared/utils/encode";
 
 class MockDeploymentDataSource implements DeploymentDataSource {
   getAll(): Promise<AkashQuery.QueryDeploymentResponse[]> {
     throw new Error("Method not implemented.");
+  }
+  getByOwner(
+    ownerAddress: string
+  ): Promise<AkashQuery.QueryDeploymentResponse[]> {
+    throw new Error(`Method not implemented. ${ownerAddress}`);
   }
 }
 
@@ -44,8 +51,14 @@ describe("Deployment Repository", () => {
           escrowAccount: undefined
         }
       ];
-      const expectedRepositoryData = [
-        { state: expectedDatasourceData[0].deployment.state }
+      const expectedRepositoryData: Deployment[] = [
+        {
+          owner: "akash1xq5s8qmhvsvxvz8v5s3s6z4j0n3x5q9q4qz4q4",
+          dseq: Long.ZERO.toNumber(),
+          state: 0,
+          version: base64FromBytes(new Uint8Array()),
+          createdAt: Long.ZERO.toNumber()
+        }
       ];
       jest
         .spyOn(mockDeploymentDataSource, "getAll")
