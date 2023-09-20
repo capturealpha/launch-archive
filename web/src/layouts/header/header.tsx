@@ -6,9 +6,9 @@ import { FlashIcon } from '@/components/icons/flash';
 import Hamburger from '@/components/ui/hamburger';
 import ActiveLink from '@/components/ui/links/active-link';
 import SearchButton from '@/components/search/button';
+import { ConnectWalletButton } from '@/components/wallet/ConnectWalletButton';
 import { useIsMounted } from '@/lib/hooks/use-is-mounted';
 import { useDrawer } from '@/components/drawer-views/context';
-import WalletConnect from '@/components/nft/wallet-connect';
 import routes from '@/config/routes';
 
 function NotificationButton() {
@@ -26,7 +26,7 @@ function HeaderRightArea() {
   return (
     <div className="relative order-last flex shrink-0 items-center gap-4 sm:gap-6 lg:gap-8">
       <NotificationButton />
-      <WalletConnect />
+      <ConnectWalletButton />
     </div>
   );
 }

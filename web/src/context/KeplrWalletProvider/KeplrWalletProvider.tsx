@@ -2,21 +2,21 @@ import React, { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import { SigningStargateClient } from '@cosmjs/stargate';
 import { uAktDenom } from '../../utils/constants';
-import { TxRaw } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
-import { EncodeObject } from '@cosmjs/proto-signing';
-import { useSnackbar } from 'notistack';
-import { Snackbar } from '../../components/shared/Snackbar';
+//import { TxRaw } from 'cosmjs-types/cosmos/tx/v1beta1/tx';
+//import { EncodeObject } from '@cosmjs/proto-signing';
+//import { useSnackbar } from 'notistack';
+//import { Snackbar } from '../../components/shared/Snackbar';
 import { customRegistry } from '../../utils/customRegistry';
-import { TransactionModal } from '../../components/layout/TransactionModal';
-import { OpenInNew } from '@mui/icons-material';
-import { useTheme } from '@mui/material';
-import { event } from 'nextjs-google-analytics';
-import { AnalyticsEvents } from '../../utils/analytics';
-import { useRouter } from 'next/router';
+//import { TransactionModal } from '../../components/layout/TransactionModal';
+//import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+//import { useTheme } from '@mui/material';
+//import { event } from 'nextjs-google-analytics';
+//import { AnalyticsEvents } from '../../utils/analytics';
+//import { useRouter } from 'next/router';
 import { UrlService } from '../../utils/urlUtils';
-import { useSettings } from '../SettingsProvider';
+// import { useSettings } from '../SettingsProvider';
 import axios from 'axios';
-import { LinkTo } from '../../components/shared/LinkTo';
+//import { LinkTo } from '../../components/shared/LinkTo';
 import { useUsdcDenom } from '../../hooks/useDenom';
 import { getSelectedNetwork } from '../../hooks/useSelectedNetwork';
 
@@ -28,29 +28,29 @@ type Balances = {
 type ContextType = {
   address: string;
   walletName: string;
-  walletBalances: Balances;
-  isKeplrInstalled: boolean;
-  isKeplrConnected: boolean;
-  isWalletLoaded: boolean;
-  connectWallet: () => Promise<void>;
-  logout: () => void;
-  setIsWalletLoaded: React.Dispatch<React.SetStateAction<boolean>>;
-  signAndBroadcastTx: (msgs: EncodeObject[]) => Promise<any>;
-  refreshBalances: (address?: string) => Promise<Balances>;
+  // walletBalances: Balances;
+  // isKeplrInstalled: boolean;
+  // isKeplrConnected: boolean;
+  // isWalletLoaded: boolean;
+  // connectWallet: () => Promise<void>;
+  // logout: () => void;
+  // setIsWalletLoaded: React.Dispatch<React.SetStateAction<boolean>>;
+  // signAndBroadcastTx: (msgs: EncodeObject[]) => Promise<any>;
+  // refreshBalances: (address?: string) => Promise<Balances>;
 };
 
 const KeplrWalletProviderContext = React.createContext<ContextType>({
   address: null,
   walletName: null,
-  walletBalances: null,
-  isKeplrInstalled: false,
-  isKeplrConnected: false,
-  isWalletLoaded: false,
-  connectWallet: null,
-  logout: null,
-  setIsWalletLoaded: null,
-  signAndBroadcastTx: null,
-  refreshBalances: null,
+  // walletBalances: null,
+  // isKeplrInstalled: false,
+  // isKeplrConnected: false,
+  // isWalletLoaded: false,
+  // connectWallet: null,
+  // logout: null,
+  // setIsWalletLoaded: null,
+  // signAndBroadcastTx: null,
+  // refreshBalances: null,
 });
 
 export const KeplrWalletProvider = ({ children }) => {
@@ -60,12 +60,16 @@ export const KeplrWalletProvider = ({ children }) => {
   const [isKeplrInstalled, setIsKeplrInstalled] = useState<boolean>(false);
   const [isWindowLoaded, setIsWindowLoaded] = useState<boolean>(false);
   const [isWalletLoaded, setIsWalletLoaded] = useState<boolean>(false);
-  const [isBroadcastingTx, setIsBroadcastingTx] = useState<boolean>(false);
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  // const [isBroadcastingTx, setIsBroadcastingTx] = useState<boolean>(false);
+  // const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const isMounted = useRef(true);
   const sigingClient = useRef<SigningStargateClient>(null);
   const router = useRouter();
-  const { settings, isSettingsInit } = useSettings();
+  // const { settings, isSettingsInit } = useSettings();
+  const settings = {
+    rpcEndpoint: 'https://rpc.cosmos.network:443',
+  };
+  const isSettingsInit = false;
   const usdcIbcDenom = useUsdcDenom();
 
   useEffect(() => {
@@ -183,7 +187,7 @@ export const KeplrWalletProvider = ({ children }) => {
     router.push(UrlService.home());
   }
 
-  async function connectWallet(): Promise<void> {
+  /* async function connectWallet(): Promise<void> {
     console.log('connecting to keplr');
     const selectedNetwork = getSelectedNetwork();
 
@@ -201,7 +205,7 @@ export const KeplrWalletProvider = ({ children }) => {
     });
 
     localStorage.setItem('keplr_autoconnect', 'true');
-  }
+  } */
 
   async function loadWallet(): Promise<void> {
     let wallet = null;
@@ -252,7 +256,7 @@ export const KeplrWalletProvider = ({ children }) => {
     setIsWalletLoaded(true);
   }
 
-  async function signAndBroadcastTx(msgs: EncodeObject[]): Promise<boolean> {
+  /* async function signAndBroadcastTx(msgs: EncodeObject[]): Promise<boolean> {
     setIsBroadcastingTx(true);
     let pendingSnackbarKey = null;
     try {
@@ -378,9 +382,9 @@ export const KeplrWalletProvider = ({ children }) => {
 
       setIsBroadcastingTx(false);
     }
-  }
+  } */
 
-  const showTransactionSnackbar = (
+  /* const showTransactionSnackbar = (
     snackTitle,
     snackMessage,
     transactionHash,
@@ -402,7 +406,7 @@ export const KeplrWalletProvider = ({ children }) => {
         autoHideDuration: 10000,
       }
     );
-  };
+  }; */
 
   async function refreshBalances(
     address?: string
@@ -436,23 +440,23 @@ export const KeplrWalletProvider = ({ children }) => {
       value={{
         address: walletAddress,
         walletName,
-        walletBalances,
-        isKeplrInstalled,
-        isKeplrConnected: !!walletName,
-        isWalletLoaded,
-        connectWallet,
-        logout,
-        setIsWalletLoaded,
-        signAndBroadcastTx,
-        refreshBalances,
+        // walletBalances,
+        // isKeplrInstalled,
+        // isKeplrConnected: !!walletName,
+        // isWalletLoaded,
+        //connectWallet,
+        //logout,
+        //setIsWalletLoaded,
+        //signAndBroadcastTx,
+        //refreshBalances,
       }}
     >
       {children}
 
-      <TransactionModal
+      {/* <TransactionModal
         open={isBroadcastingTx}
         onClose={() => setIsBroadcastingTx(false)}
-      />
+      /> */}
     </KeplrWalletProviderContext.Provider>
   );
 };
@@ -462,7 +466,7 @@ export function useKeplr() {
   return { ...React.useContext(KeplrWalletProviderContext) };
 }
 
-const TransactionSnackbarContent = ({ snackMessage, transactionHash }) => {
+/* const TransactionSnackbarContent = ({ snackMessage, transactionHash }) => {
   const theme = useTheme();
   const txUrl = transactionHash && UrlService.transaction(transactionHash);
 
@@ -480,9 +484,9 @@ const TransactionSnackbarContent = ({ snackMessage, transactionHash }) => {
           onClick={() => window.open(txUrl, '_blank')}
         >
           View transaction{' '}
-          <OpenInNew sx={{ fontSize: '1rem', marginLeft: '.5rem' }} />
+          <OpenInNewIcon sx={{ fontSize: '1rem', marginLeft: '.5rem' }} />
         </LinkTo>
       )}
     </>
   );
-};
+}; */

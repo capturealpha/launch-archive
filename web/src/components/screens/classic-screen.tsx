@@ -17,7 +17,7 @@ export default function ClassicScreen() {
   return (
     <>
       <NextSeo
-        title="Criptic Classic Demo"
+        title="Launch Classic Demo"
         description="GPU-Enabled Jupyter Notebook Deployment Platform"
       />
       <div className="flex flex-wrap">

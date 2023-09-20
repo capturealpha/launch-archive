@@ -10,7 +10,6 @@ import { Close } from '@/components/icons/close';
 import { useDrawer } from '@/components/drawer-views/context';
 import { ChevronDown } from '@/components/icons/chevron-down';
 import { MenuItem } from '@/components/ui/collapsible-menu';
-import WalletConnect from '@/components/nft/wallet-connect';
 import { menuItems } from '@/layouts/sidebar/_menu-items';
 
 export function MenuItems() {
@@ -112,7 +111,6 @@ export default function DrawerMenu() {
         </div>
       </Scrollbar>
       <div className="absolute right-0 bottom-4 z-10 px-6">
-        <WalletConnect />
       </div>
     </div>
   );

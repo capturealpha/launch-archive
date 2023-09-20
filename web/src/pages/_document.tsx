@@ -5,6 +5,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
+import { augmentDocumentWithEmotionCache } from "./_app";
 
 class CustomDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -28,5 +29,7 @@ class CustomDocument extends Document {
     );
   }
 }
+
+augmentDocumentWithEmotionCache(CustomDocument);
 
 export default CustomDocument;

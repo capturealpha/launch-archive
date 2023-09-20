@@ -22,7 +22,7 @@ const Retro: NextPageWithLayout<
   return (
     <>
       <NextSeo
-        title="Criptic - Retro"
+        title="Launch"
         description="GPU-Enabled Jupyter Notebook Deployment Platform"
       />
       <div className="retro-container">

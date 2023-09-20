@@ -1,4 +1,5 @@
 import Button from '@/components/ui/button';
+import { ConnectWalletButton } from '@/components/wallet/ConnectWalletButton';
 import { WalletContext } from '@/lib/hooks/use-connect';
 import { Menu } from '@/components/ui/menu';
 import { Transition } from '@/components/ui/transition';
@@ -64,7 +65,7 @@ export default function WalletConnect() {
                     <div className="p-3">
                       <div
                         className="flex cursor-pointer items-center gap-3 rounded-lg py-2.5 px-3 text-sm font-medium text-gray-900 transition hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800"
-                        onClick={disconnectWallet}
+                        //onClick={disconnectWallet}
                       >
                         <PowerIcon />
                         <span className="grow uppercase">Disconnect</span>
@@ -81,12 +82,15 @@ export default function WalletConnect() {
           </ActiveLink>
         </div>
       ) : (
-        <Button
-          onClick={() => openModal('WALLET_CONNECT_VIEW')}
-          className="shadow-main hover:shadow-large"
-        >
-          CONNECT
-        </Button>
+        <div>
+          <ConnectWalletButton
+            onClick={() => openModal('WALLET_CONNECT_VIEW')}
+            className="shadow-main hover:shadow-large"
+          >
+            CONNECT
+          </ConnectWalletButton>
+          <Button>FOO</Button>
+        </div>
       )}
     </>
   );

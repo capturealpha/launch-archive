@@ -48,7 +48,7 @@ const Index2: NextPageWithLayout<
   return (
     <>
       <NextSeo
-        title="Criptic Minimal"
+        title="Launch"
         description="GPU-Enabled Jupyter Notebook Deployment Platform"
       />
       <div className="mt-8 gap-6 px-4 sm:px-6 lg:px-8 xl:px-10 3xl:px-12">

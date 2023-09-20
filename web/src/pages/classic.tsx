@@ -28,7 +28,7 @@ const ClassicPage: NextPageWithLayout<
   return (
     <>
       <NextSeo
-        title="Criptic Classic Demo"
+        title="Launch"
         description="GPU-Enabled Jupyter Notebook Deployment Platform"
       />
       <div className="flex flex-wrap">

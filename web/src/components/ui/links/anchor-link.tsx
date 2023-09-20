@@ -5,9 +5,9 @@ const AnchorLink: React.FC<
   LinkProps & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>
 > = ({ href, ...props }) => {
   return (
-    <NextLink href={href}>
-      <a {...props} />
-    </NextLink>
+    (<NextLink href={href} {...props}>
+
+    </NextLink>)
   );
 };
 

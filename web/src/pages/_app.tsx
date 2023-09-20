@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import type { NextPageWithLayout } from '@/types';
 import Head from 'next/head';
+import { createEmotionSsrAdvancedApproach } from 'tss-react/next/pagesDir';
 import { ThemeProvider } from 'next-themes';
 import ModalsContainer from '@/components/modal-views/container';
 import DrawersContainer from '@/components/drawer-views/container';
@@ -17,6 +18,11 @@ import '@/assets/css/range-slider.css';
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
+
+const { augmentDocumentWithEmotionCache, withAppEmotionCache } =
+  createEmotionSsrAdvancedApproach({ key: 'css' });
+
+export { augmentDocumentWithEmotionCache };
 
 function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
   //could remove this if you don't need to page level layout
@@ -48,4 +54,4 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
   );
 }
 
-export default CustomApp;
+export default withAppEmotionCache(CustomApp);
