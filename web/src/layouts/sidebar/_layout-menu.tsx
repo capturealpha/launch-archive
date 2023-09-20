@@ -110,8 +110,7 @@ export default function DrawerMenu() {
           </div>
         </div>
       </Scrollbar>
-      <div className="absolute right-0 bottom-4 z-10 px-6">
-      </div>
+      <div className="absolute right-0 bottom-4 z-10 px-6"></div>
     </div>
   );
 }

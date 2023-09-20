@@ -11,13 +11,13 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
   const [balance, setBalance] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
- /*  const web3Modal =
+  /*  const web3Modal =
     typeof window !== 'undefined' && new Web3Modal({ cacheProvider: true }); */
 
   /* This effect will fetch wallet address if user has already connected his/her wallet */
   useEffect(() => {
     async function checkConnection() {
-/*       try {
+      /*       try {
         if (window && window.ethereum) {
           // Check if web3modal wallet connection is available on storage
           if (localStorage.getItem(web3modalStorageKey)) {
@@ -35,7 +35,7 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const setWalletAddress = async (provider: any) => {
-   /*  try {
+    /*  try {
       const signer = provider.getSigner();
       if (signer) {
         const web3Address = await signer.getAddress();
