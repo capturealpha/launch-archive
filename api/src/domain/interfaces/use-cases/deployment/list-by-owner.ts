@@ -1,5 +1,5 @@
 import { type Deployment } from "../../../entities/deployment";
 
-export interface GetDeploymentsByOwnerUseCase {
+export interface IListByOwnerUseCase {
   execute: (ownerAddress: string) => Promise<Deployment[]>;
 }

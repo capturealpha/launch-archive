@@ -1,18 +1,30 @@
 import Long from "long";
-import { type DeploymentDataSource } from "@src/data/interfaces/data-sources/deployment-data-source";
+import { type IDeploymentDataSource } from "@src/data/interfaces/data-sources/deployment-data-source";
 import { type Deployment } from "@src/domain/entities/deployment";
-import { type DeploymentRepository } from "@src/domain/interfaces/repositories/deployment-repository";
+import { type IDeploymentRepository } from "@src/domain/interfaces/repositories/deployment-repository";
 import { base64FromBytes } from "../../../../shared/utils/encode";
 
-export class DeploymentRepositoryImpl implements DeploymentRepository {
-  deploymentDataSource: DeploymentDataSource;
+export class DeploymentRepositoryImpl implements IDeploymentRepository {
+  deploymentDataSource: IDeploymentDataSource;
 
-  constructor(deploymentDataSource: DeploymentDataSource) {
+  constructor(deploymentDataSource: IDeploymentDataSource) {
     this.deploymentDataSource = deploymentDataSource;
   }
 
-  async getDeployments(): Promise<Deployment[]> {
-    const deployments = await this.deploymentDataSource.getAll();
+  async create(deployment: Deployment): Promise<Deployment> {
+    const res = await this.deploymentDataSource.create();
+    console.log(res);
+    return {
+      state: 0,
+      owner: deployment.owner,
+      dseq: 0,
+      version: "",
+      createdAt: Date.now()
+    };
+  }
+
+  async list(): Promise<Deployment[]> {
+    const deployments = await this.deploymentDataSource.list();
     const res: Deployment[] = [];
     deployments.forEach((deployment) => {
       console.log(deployment.deployment);
@@ -31,9 +43,9 @@ export class DeploymentRepositoryImpl implements DeploymentRepository {
     return res;
   }
 
-  async getDeploymentsByOwner(ownerAddress: string): Promise<Deployment[]> {
+  async listByOwner(ownerAddress: string): Promise<Deployment[]> {
     const deployments =
-      await this.deploymentDataSource.getByOwner(ownerAddress);
+      await this.deploymentDataSource.listByOwner(ownerAddress);
     const res: Deployment[] = [];
     deployments.forEach((deployment) => {
       res.push({

@@ -1,6 +1,7 @@
 import { type Deployment } from "@src/domain/entities/deployment";
 
-export interface DeploymentRepository {
-  getDeployments: () => Promise<Deployment[]>;
-  getDeploymentsByOwner: (ownerAddress: string) => Promise<Deployment[]>;
+export interface IDeploymentRepository {
+  create: (deployment: Deployment) => Promise<Deployment>;
+  list: () => Promise<Deployment[]>;
+  listByOwner: (ownerAddress: string) => Promise<Deployment[]>;
 }

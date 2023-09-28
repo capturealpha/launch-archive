@@ -1,30 +1,36 @@
 import express from "express";
 import asyncHandler from "express-async-handler";
-import { type GetDeploymentsUseCase } from "@src/domain/interfaces/use-cases/deployment/get-deployments";
-import { type GetDeploymentsByOwnerUseCase } from "@src/domain/interfaces/use-cases/deployment/get-deployments-by-owner";
+import { type IListUseCase } from "@src/domain/interfaces/use-cases/deployment/list";
+import { type IListByOwnerUseCase } from "@src/domain/interfaces/use-cases/deployment/list-by-owner";
 
 export const apiRouter = express.Router();
 
 export default function DeploymentRouter(
-  getDeploymentsUseCase: GetDeploymentsUseCase,
-  getDeploymentsByOwnerUseCase: GetDeploymentsByOwnerUseCase
+  listUseCase: IListUseCase,
+  listByOwnerUseCase: IListByOwnerUseCase
 ): express.Router {
   const router = express.Router();
 
-  router.get(
-    "/",
+  /* router.get(
+    "/:address/:dseq",
     asyncHandler(async (req, res) => {
-      const deployments = await getDeploymentsUseCase.execute();
+      const deployments = await listUseCase.execute();
+      res.send(deployments);
+    })
+  ); */
+
+  router.get(
+    "/list",
+    asyncHandler(async (req, res) => {
+      const deployments = await listUseCase.execute();
       res.send(deployments);
     })
   );
 
   router.get(
-    "/byOwner/:address",
+    "/listByOwner/:address",
     asyncHandler(async (req, res) => {
-      const deployments = await getDeploymentsByOwnerUseCase.execute(
-        req.params?.address
-      );
+      const deployments = await listByOwnerUseCase.execute(req.params?.address);
       res.send(deployments);
     })
   );

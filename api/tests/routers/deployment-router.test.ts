@@ -1,37 +1,34 @@
 import request from "supertest";
 import { type Deployment } from "../../src/domain/entities/deployment";
-import { type GetDeploymentsUseCase } from "../../src/domain/interfaces/use-cases/deployment/get-deployments";
-import { type GetDeploymentsByOwnerUseCase } from "../../src/domain/interfaces/use-cases/deployment/get-deployments-by-owner";
+import { type IListUseCase } from "../../src/domain/interfaces/use-cases/deployment/list";
+import { type IListByOwnerUseCase } from "../../src/domain/interfaces/use-cases/deployment/list-by-owner";
 import DeploymentRouter from "../../src/routers/deployment-router";
 import server from "../../src/server";
 import Long from "long";
 import { base64FromBytes } from "../../../shared/utils/encode";
 
-class MockGetDeploymentsUseCase implements GetDeploymentsUseCase {
+class MockListUseCase implements IListUseCase {
   async execute(): Promise<Deployment[]> {
     throw new Error("Method not implemented.");
   }
 }
 
-class MockGetDeploymentsByOwnerUseCase implements GetDeploymentsByOwnerUseCase {
+class MockListByOwnerUseCase implements IListByOwnerUseCase {
   async execute(ownerAdreass: string): Promise<Deployment[]> {
     throw new Error(`Method not implemented. ${ownerAdreass}`);
   }
 }
 
 describe("Deployment Router", () => {
-  let mockGetDeploymentsUseCase: GetDeploymentsUseCase;
-  let mockGetDeploymentsByOwnerUseCase: GetDeploymentsByOwnerUseCase;
+  let mockListUseCase: IListUseCase;
+  let mockListByOwnerUseCase: IListByOwnerUseCase;
 
   beforeAll(() => {
-    mockGetDeploymentsUseCase = new MockGetDeploymentsUseCase();
-    mockGetDeploymentsByOwnerUseCase = new MockGetDeploymentsByOwnerUseCase();
+    mockListUseCase = new MockListUseCase();
+    mockListByOwnerUseCase = new MockListByOwnerUseCase();
     server.use(
       "/deployment",
-      DeploymentRouter(
-        mockGetDeploymentsUseCase,
-        mockGetDeploymentsByOwnerUseCase
-      )
+      DeploymentRouter(mockListUseCase, mockListByOwnerUseCase)
     );
   });
 
@@ -51,23 +48,23 @@ describe("Deployment Router", () => {
         }
       ];
       jest
-        .spyOn(mockGetDeploymentsUseCase, "execute")
+        .spyOn(mockListUseCase, "execute")
         .mockImplementation(async () => await Promise.resolve(expectedData));
 
-      const response = await request(server).get("/deployment");
+      const response = await request(server).get("/deployment/list");
 
       expect(response.status).toBe(200);
-      expect(mockGetDeploymentsUseCase.execute).toBeCalledTimes(1);
+      expect(mockListUseCase.execute).toBeCalledTimes(1);
       expect(response.body).toStrictEqual(expectedData);
     });
 
     test("GET /deployment returns 500 on use case error", async () => {
       jest
-        .spyOn(mockGetDeploymentsUseCase, "execute")
+        .spyOn(mockListUseCase, "execute")
         .mockImplementation(
           async () => await Promise.reject(Error("Error fetching data"))
         );
-      const response = await request(server).get("/deployment");
+      const response = await request(server).get("/deployment/list");
       expect(response.status).toBe(500);
     });
   });

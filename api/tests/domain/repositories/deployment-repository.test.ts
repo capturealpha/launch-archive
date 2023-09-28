@@ -1,17 +1,21 @@
-import { DeploymentDataSource } from "../../../src/data/interfaces/data-sources/deployment-data-source";
+import { IDeploymentDataSource } from "../../../src/data/interfaces/data-sources/deployment-data-source";
 import AkashQuery from "@akashnetwork/akashjs/build/protobuf/akash/deployment/v1beta3/query";
 import AkashDeployment from "@akashnetwork/akashjs/build/protobuf/akash/deployment/v1beta3/deployment";
-import { DeploymentRepository } from "../../../src/domain/interfaces/repositories/deployment-repository";
+import { MsgCreateDeploymentResponse } from "@akashnetwork/akashjs/build/protobuf/akash/deployment/v1beta3/deploymentmsg";
+import { IDeploymentRepository } from "../../../src/domain/interfaces/repositories/deployment-repository";
 import { DeploymentRepositoryImpl } from "../../../src/domain/repositories/deployment-repository";
 import Long from "long";
 import { Deployment } from "@src/domain/entities/deployment";
 import { base64FromBytes } from "../../../../shared/utils/encode";
 
-class MockDeploymentDataSource implements DeploymentDataSource {
-  getAll(): Promise<AkashQuery.QueryDeploymentResponse[]> {
+class MockDeploymentDataSource implements IDeploymentDataSource {
+  create(): Promise<MsgCreateDeploymentResponse> {
+    throw new Error(`Method not implemented.`);
+  }
+  list(): Promise<AkashQuery.QueryDeploymentResponse[]> {
     throw new Error("Method not implemented.");
   }
-  getByOwner(
+  listByOwner(
     ownerAddress: string
   ): Promise<AkashQuery.QueryDeploymentResponse[]> {
     throw new Error(`Method not implemented. ${ownerAddress}`);
@@ -20,7 +24,7 @@ class MockDeploymentDataSource implements DeploymentDataSource {
 
 describe("Deployment Repository", () => {
   let mockDeploymentDataSource: MockDeploymentDataSource;
-  let deploymentRepository: DeploymentRepository;
+  let deploymentRepository: IDeploymentRepository;
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -30,7 +34,7 @@ describe("Deployment Repository", () => {
     );
   });
 
-  describe("getAllDeployments", () => {
+  describe("listDeployments", () => {
     test("should return data", async () => {
       console.log(AkashQuery, AkashDeployment);
       const expectedDatasourceData = [
@@ -61,9 +65,9 @@ describe("Deployment Repository", () => {
         }
       ];
       jest
-        .spyOn(mockDeploymentDataSource, "getAll")
+        .spyOn(mockDeploymentDataSource, "list")
         .mockImplementation(() => Promise.resolve(expectedDatasourceData));
-      const result = await deploymentRepository.getDeployments();
+      const result = await deploymentRepository.list();
       expect(result).toStrictEqual(expectedRepositoryData);
     });
   });
