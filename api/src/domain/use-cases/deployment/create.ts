@@ -1,15 +1,15 @@
 import { Deployment } from "@src/domain/entities/deployment";
 import { IDeploymentRepository } from "@src/domain/interfaces/repositories/deployment-repository";
-import { IListByOwnerUseCase } from "@src/domain/interfaces/use-cases/deployment/list-by-owner";
+import { ICreateUseCase } from "@src/domain/interfaces/use-cases/deployment/create";
 
-export class ListDeploymentsByOwner implements IListByOwnerUseCase {
+export class CreateDeployment implements ICreateUseCase {
   deploymentRepository: IDeploymentRepository;
   constructor(deploymentRepository: IDeploymentRepository) {
     this.deploymentRepository = deploymentRepository;
   }
 
-  async execute(ownerAddress: string): Promise<Deployment[]> {
-    const result = await this.deploymentRepository.listByOwner(ownerAddress);
+  async execute(deployment: Deployment): Promise<Deployment> {
+    const result = await this.deploymentRepository.create(deployment);
     return result;
   }
 }

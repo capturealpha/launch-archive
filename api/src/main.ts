@@ -1,7 +1,8 @@
 import server from "./server";
 import DeploymentRouter from "./routers/deployment-router";
 import { ListDeployments } from "./domain/use-cases/deployment/list";
-import { ListByOwner } from "./domain/use-cases/deployment/list-by-owner";
+import { ListDeploymentsByOwner } from "./domain/use-cases/deployment/list-by-owner";
+import { CreateDeployment } from "./domain/use-cases/deployment/create";
 import { DeploymentRepositoryImpl } from "./domain/repositories/deployment-repository";
 import { AkashApiDeploymentDataSource } from "./data/data-sources/akash/akash-deployment-data-source";
 
@@ -14,7 +15,8 @@ import { AkashApiDeploymentDataSource } from "./data/data-sources/akash/akash-de
 
   const deploymentMiddleWare = DeploymentRouter(
     new ListDeployments(repo),
-    new ListByOwner(repo)
+    new ListDeploymentsByOwner(repo),
+    new CreateDeployment(repo)
   );
 
   server.use("/deployment", deploymentMiddleWare);
